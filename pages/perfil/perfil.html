@@ -6,12 +6,13 @@
     <title>Controle de Finanças</title>
     <link rel="stylesheet" href="../home/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../perfil/perfil.css">
 </head>
 <body>
     <nav id="sidebar">
         <div id="sidebar_content">
             <div id="user">
-                <img src="src/images/avatar.jpg" id="user_avatar" alt="Avatar">
+                <img src="../../img/log.svg" id="user_avatar" alt="Avatar">
     
                 <p id="user_infos">
                     <span class="item-description">
@@ -24,7 +25,7 @@
             </div>
     
             <ul id="side_items">
-                <li class="side-item" data-index="0">
+                <li class="side-item ative" data-index="0">
                     <a href="../home/home.html">
                         <i class="fa-solid fa-chart-line"></i>
                         <span class="item-description">
@@ -42,29 +43,20 @@
                     </a>
                 </li>
     
-                <li class="side-item" data-index="2">
-                    <a href="#">
-                        <i class="fa-solid fa-bell"></i>
-                        <span class="item-description">
-                            Notificações
-                        </span>
-                    </a>
-                </li>
-    
                 <li class="side-item" data-index="3">
-                    <a href="#">
-                        <i class="fa-solid fa-box"></i>
+                    <a href="../movimentacoes/movimentacoes.html">
+                        <i class="fa-solid fa-plus"></i>
                         <span class="item-description">
-                            Produtos
+                            Movimentações
                         </span>
                     </a>
                 </li>
     
                 <li class="side-item" data-index="4">
-                    <a href="#">
-                        <i class="fa-solid fa-image"></i>
+                    <a href="../comunidade/comunidade.html">
+                        <i class="fa-solid fa-pager"></i>
                         <span class="item-description">
-                            Imagens
+                            Comunidade
                         </span>
                     </a>
                 </li>
@@ -92,19 +84,96 @@
             </button>
         </div>
     </nav>
-    <main>
-        <!-- <div id="loader">
-            <div class="spinner"></div>
-        </div> -->
-        <div class="content">
-            <h1>Página de Perfil</h1>
-            <p>Bem-vindo ao seu painel de controle financeiro.</p>
-        </div>
+    <main id="main-content">
+        <div id="profile-page">
+            <header>
+                <h1>Página de Perfil</h1>
+            </header>
+
+            <!-- Foto do Usuário -->
+            <section id="user-photo">
+                <h2>Foto de Perfil</h2>
+                <div class="photo-container">
+                    <img src="https://via.placeholder.com/150" alt="Foto do Usuário" id="profile-image">
+                    <label for="upload-photo" class="upload-photo-label">Alterar Foto</label>
+                    <input type="file" id="upload-photo" accept="image/*" class="hidden">
+                </div>
+            </section>
+    
+            <!-- Informações do Usuário -->
+            <section id="user-info">
+                <h2>Informações Pessoais</h2>
+                <div class="info-item">
+                    <label for="username">Nome de Usuário:</label>
+                    <p id="username">João Silva</p>
+                </div>
+                <div class="info-item">
+                    <label for="email">Email:</label>
+                    <p id="email">joao.silva@email.com</p>
+                </div>
+                <div class="info-item">
+                    <label for="phone">Telefone:</label>
+                    <p id="phone">+55 11 98765-4321</p>
+                </div>
+                <div class="info-item">
+                    <label for="address">Endereço:</label>
+                    <p id="address">Rua Exemplo, 123 - São Paulo, SP</p>
+                </div>
+            </section>
+    
+            <!-- Alteração de Senha e Segurança -->
+             
+            <!-- Seção para troca de senha -->
+            <section id="security">
+                <h2>Senha e Segurança</h2>
+                <div class="info-item">
+                    <label for="current-password">Senha Atual:</label>
+                    <input type="password" id="current-password" placeholder="Digite sua senha atual">
+                </div>
+                <div class="info-item">
+                    <label for="new-password">Nova Senha:</label>
+                    <input type="password" id="new-password" placeholder="Digite a nova senha">
+                </div>
+                <div class="info-item">
+                    <label for="confirm-password">Confirmar Nova Senha:</label>
+                    <input type="password" id="confirm-password" placeholder="Confirme a nova senha">
+                </div>
+                <button id="change-password-btn" onclick="changePassword()">Alterar Senha</button>
+            </section>
+
     </main>
+    <script>
+        // Função para alterar a foto de perfil
+        const uploadPhotoInput = document.getElementById("upload-photo");
+        const profileImage = document.getElementById("profile-image");
+
+        // 🔹 Carrega a foto do localStorage ao iniciar a página
+        document.addEventListener("DOMContentLoaded", function () {
+            const savedImage = localStorage.getItem("profileImage");
+            if (savedImage) {
+                profileImage.src = savedImage;
+            }
+        });
+
+        // 🔹 Evento para atualizar a foto e salvar no localStorage
+        uploadPhotoInput.addEventListener("change", function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const imageData = e.target.result;
+                    profileImage.src = imageData;
+                    localStorage.setItem("profileImage", imageData); // Salva no localStorage
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
     <script src="../js/sidebar.js"></script>
     <script src="../../app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-auth-compat.js"></script>
-    <script src="../../firebase-init.js"></script>t>
+    <script src="../../firebase-init.js"></script>
+    <script src="../js/atualiza-senha.js"></script>
 </body>
 </html>

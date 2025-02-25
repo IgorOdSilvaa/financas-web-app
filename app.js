@@ -93,7 +93,7 @@ function recoverPassword() {
 
 // Função de Logout
 function logout() {
-
+    localStorage.setItem("activeMenuItem", "0"); // Define o primeiro item como ativo
     firebase.auth().signOut()
         .then(() => {
             alert("Logout realizado com sucesso!");

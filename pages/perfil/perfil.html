@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Finanças</title>
+    <link rel="stylesheet" href="../home/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav id="sidebar">
+        <div id="sidebar_content">
+            <div id="user">
+                <img src="src/images/avatar.jpg" id="user_avatar" alt="Avatar">
+    
+                <p id="user_infos">
+                    <span class="item-description">
+                        Fulano de Tal
+                    </span>
+                    <span class="item-description">
+                        Lorem Ipsum
+                    </span>
+                </p>
+            </div>
+    
+            <ul id="side_items">
+                <li class="side-item" data-index="0">
+                    <a href="../home/home.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span class="item-description">
+                            Dashboard
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item" data-index="1">
+                    <a href="../perfil/perfil.html">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="item-description">
+                            Perfil
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item" data-index="2">
+                    <a href="#">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="item-description">
+                            Notificações
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item" data-index="3">
+                    <a href="#">
+                        <i class="fa-solid fa-box"></i>
+                        <span class="item-description">
+                            Produtos
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item" data-index="4">
+                    <a href="#">
+                        <i class="fa-solid fa-image"></i>
+                        <span class="item-description">
+                            Imagens
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item" data-index="5">
+                    <a href="#">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="item-description">
+                            Configurações
+                        </span>
+                    </a>
+                </li>
+            </ul>
+    
+            <button id="open_btn">
+                <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+        <div id="logout">
+            <button id="logout_btn" onclick="logout()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="item-description">
+                    Sair
+                </span>
+            </button>
+        </div>
+    </nav>
+    <main>
+        <!-- <div id="loader">
+            <div class="spinner"></div>
+        </div> -->
+        <div class="content">
+            <h1>Página de Perfil</h1>
+            <p>Bem-vindo ao seu painel de controle financeiro.</p>
+        </div>
+    </main>
+    <script src="../js/sidebar.js"></script>
+    <script src="../../app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-auth-compat.js"></script>
+    <script src="../../firebase-init.js"></script>t>
+</body>
+</html>

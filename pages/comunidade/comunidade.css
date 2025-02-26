@@ -1,0 +1,71 @@
+.container-comunidade {
+    max-width: 100%;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comunidade_textArea {
+    width: 100%;
+    padding: 10px;
+    resize: none;
+}
+
+.comunidade_btn {
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.comunidade_btn:hover {
+    background: #0056b3;
+}
+
+.post {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post .content {
+    margin-bottom: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.like-btn {
+    cursor: pointer;
+    color: #007bff;
+}
+
+.comment-section {
+    margin-top: 10px;
+}
+
+.comment {
+    background: #f1f1f1;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+}

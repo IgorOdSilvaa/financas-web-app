@@ -275,7 +275,8 @@ main {
 }
 
 table {
-    width: 100%;
+    width: 100%; /* Deixe a largura da tabela ser determinada pelo conteúdo */
+    margin: 0 auto; /* Centralize a tabela se necessário */
     border-collapse: collapse;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -365,6 +366,7 @@ table tr:nth-child(even) {
     .charts {
         grid-template-columns: 1fr;
     }
+
 
     table th, table td {
         font-size: 14px;
